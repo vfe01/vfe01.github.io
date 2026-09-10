@@ -1,0 +1,1 @@
+- Stöd för både engelska och svenska
