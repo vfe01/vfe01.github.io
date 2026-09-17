@@ -1,16 +1,38 @@
 ---
-import Layout from '../components/Layout/Layout.astro'
+import Layout from "../components/Layout/Layout.astro";
 ---
 
-<Layout title="@vfe01", description="Welcome to my personal homepage!">
-	<h1>Woah! Hello there</h1>
-	<p>I'm Ville and this is my personal website, which I've linked to in e.g. my resume. However, I'm currently working on implementing it.</p>
-	<p>In the meantime, you can check me out on:</p>
-	<ul>
-		<li><a href="https://www.linkedin.com/in/ville-elings-378a11249/">LinkedIn</a> (profile details only visible to connections for security purposes, e.g. to prevent phishing and social engineering attacks)</li>	
-		<li><a href="https://github.com/vfe01">GitHub</a> (where <a href="https://github.com/vfe01/vfe01.github.io">this site's source code</a> is available)</li>
-	</ul>		
-	
+<Layout title="@vfe01">
+  <div class="content-center mx-5 sm:max-w-prose sm:mx-auto">
+    <h1 class="maintitle">Welcome!</h1>
+    <div class="text-left space-y-1.5">
+      <p>
+        I'm Ville and this is my personal website, which I've linked to in e.g.
+        my resume. While it's not very elaborate at this point, I'm working on
+        improving it.
+      </p>
+      <p>
+        Here's links to some online profiles which might be of interest to you:
+      </p>
+      <ul class="unorderedlist">
+        <li>
+          <a
+            class="hyperlink"
+            href="https://www.linkedin.com/in/ville-elings-378a11249/"
+            >LinkedIn</a
+          > (profile details only visible to connections for security purposes, e.g.
+          to prevent phishing and social engineering attacks)
+        </li>
+        <li>
+          <a class="hyperlink" href="https://github.com/vfe01">GitHub </a>
+          (where <a
+            class="hyperlink"
+            href="https://github.com/vfe01/vfe01.github.io"
+          >
+            this site's source code
+          </a> is available)
+        </li>
+      </ul>
+    </div>
+  </div>
 </Layout>
-
-
