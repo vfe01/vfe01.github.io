@@ -2,3 +2,17 @@
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
+
+@layer components {
+    .hyperlink {
+        @apply font-medium text-fg-brand hover:underline;
+    }
+
+    .unorderedlist {
+        @apply list-disc space-y-0.5 pl-5;
+    }
+
+    .maintitle {
+        @apply text-center text-4xl font-bold mb-4 tracking-tight text-heading md:text-5xl lg:text-7xl;
+    }
+}
