@@ -16,3 +16,10 @@
         @apply text-center text-4xl font-bold mb-4 tracking-tight text-heading md:text-5xl lg:text-7xl;
     }
 }
+
+/* https://tailwindcss.com/docs/theme */
+@theme {
+    --color-primary: #2563eb;
+    --color-secondary: #7c3aed;
+    --color-tertiary: #f59e0b;
+}
