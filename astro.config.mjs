@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://about.vfe01.xyz',
   integrations: [react()],
-
+  trailingSlash: "never",
   vite: {
     plugins: [tailwindcss()]
   }
