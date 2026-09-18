@@ -1,38 +1,23 @@
 ---
 import Layout from "../components/Layout/Layout.astro";
+import AboutMeCard from "../components/AboutMeCard.astro";
 ---
 
 <Layout title="@vfe01">
-  <div class="content-center mx-5 sm:max-w-prose sm:mx-auto">
+  <div class="mx-5 space-y-6 sm:mx-auto sm:max-w-4xl">
     <h1 class="maintitle">Welcome!</h1>
-    <div class="text-left space-y-1.5">
+    <div class="space-y-1.5 text-left">
       <p>
         I'm Ville and this is my personal website, which I've linked to in e.g.
         my resume. While it's not very elaborate at this point, I'm working on
         improving it.
       </p>
       <p>
-        Here's links to some online profiles which might be of interest to you:
+        The hero card below contains personal information, proficiencies, and
+        website links in one place.
       </p>
-      <ul class="unorderedlist">
-        <li>
-          <a
-            class="hyperlink"
-            href="https://www.linkedin.com/in/ville-elings-378a11249/"
-            >LinkedIn</a
-          > (profile details only visible to connections for security purposes, e.g.
-          to prevent phishing and social engineering attacks)
-        </li>
-        <li>
-          <a class="hyperlink" href="https://github.com/vfe01">GitHub </a>
-          (where <a
-            class="hyperlink"
-            href="https://github.com/vfe01/vfe01.github.io"
-          >
-            this site's source code
-          </a> is available)
-        </li>
-      </ul>
     </div>
+
+    <AboutMeCard />
   </div>
 </Layout>
