@@ -13,7 +13,7 @@
     }
 
     .maintitle {
-        @apply text-center text-4xl font-bold mb-4 tracking-tight text-heading md:text-5xl lg:text-7xl;
+        @apply text-center text-4xl font-bold py-2 md:py-6 tracking-tight text-heading md:text-5xl lg:text-7xl;
     }
 }
 
