@@ -20,12 +20,11 @@ const { title, description = "Welcome to my personal homepage!" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="
-  bg-linear-to-br from-red-950 to-rose-800
-  text-white">
+  bg-linear-to-br from-red-950 to-rose-800">
     <Header />
 
     <main >
-      <slot />
+        <slot />
     </main>
     <script
       is:inline
