@@ -10,7 +10,7 @@ type AboutMeItem = {
 
 const aboutMePersonalInformation: AboutMeItem[] = [
     { label: "Name", value: { type: "text", text: "Ville Elings" } },
-    { label: "Age", value: { type: "text", text: "25" } },
+    { label: "Age", value: { type: "text", text: "25 years" } },
     { label: "Located in", value: { type: "text", text: "Uppsala, Sweden" } },
 ];
 
@@ -19,17 +19,24 @@ const aboutMeProficiencies: AboutMeItem[] = [
         label: "Education",
         value: {
             type: "text",
-            text: "Master's Programme in Computer and Information Engineering (civilingenjor i informationsteknologi)",
+            text: "Master's Programme in Computer and Information Engineering, Uppsala University 2021-2026",
         },
     },
     {
-        label: "Languages",
-        value: { type: "text", text: "C, Java, Python, TypeScript" },
+        label: "Areas of Expertise",
+        value: {
+            type: "text",
+            text: "Machine Learning,\nData Engineering,\nFullstack Development",
+        }
     },
     {
-        label: "Focus",
-        value: { type: "text", text: "Backend development and security" },
+        label: "Previous Occupations",
+        value: {
+            type: "text",
+            text: "Fullstack Engineer,\nTeaching Assistant (IT engineering project course)",
+        },
     },
+    
 ];
 
 const aboutMeWebsiteLinks: AboutMeItem[] = [
@@ -50,16 +57,7 @@ const aboutMeWebsiteLinks: AboutMeItem[] = [
             href: "https://github.com/vfe01",
             external: true,
         },
-    },
-    {
-        label: "Source code",
-        value: {
-            type: "link",
-            text: "This website",
-            href: "https://github.com/vfe01/vfe01.github.io",
-            external: true,
-        },
-    },
+    }
 ];
 
 const cardSections = [
@@ -78,9 +76,9 @@ const cardSections = [
 ];
 ---
 
-<section aria-label="About me overview" class="w-full my-20">
+<section aria-label="About me overview" class="w-full my-10">
     <article
-        class="relative overflow-hidden rounded-3xl border border-default bg-linear-to-br from-neutral-secondary-soft to-neutral-primary p-6 shadow-lg/90 shadow-neutral-tertiary/90 sm:p-8"
+        class="relative overflow-hidden rounded-3xl border-4 border-gray-200 bg-linear-to-br from-stone-300 to-taupe-100 p-6 shadow-lg/90 shadow-neutral-tertiary/90 sm:p-8"
     >
         <div
             class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_55%)]"
@@ -88,33 +86,28 @@ const cardSections = [
         </div>
         <div class="relative z-10 space-y-6">
             <div>
-                <p
-                    class="text-xs font-semibold uppercase tracking-[0.2em] text-body"
-                >
-                    Hero Card
-                </p>
                 <h2 class="mt-1 text-3xl font-bold tracking-tight text-heading">
                     About Me
                 </h2>
             </div>
 
             <div
-                class="flex flex-col divide-y divide-default rounded-2xl border border-default bg-neutral-primary/70 backdrop-blur-sm lg:flex-row lg:divide-x lg:divide-y-0"
+                class="flex flex-col divide-y divide-default rounded-2xl border border-default bg-neutral-primary/70 backdrop-blur-sm"
             >
                 {
                     cardSections.map((section) => (
-                        <section class="p-4 sm:p-5 lg:min-w-0 lg:flex-1">
-                            <h3 class="mb-4 text-sm font-semibold uppercase tracking-wide text-heading">
+                        <section class="min-w-0 p-4 sm:p-5">
+                            <h3 class="mb-4 text-lg md:text-2xl font-semibold uppercase tracking-wide text-heading text-right mr-5">
                                 {section.title}
                             </h3>
 
-                            <dl class="grid grid-cols-1 gap-2 sm:grid-cols-[minmax(10rem,12rem)_1fr] sm:gap-x-6 sm:gap-y-3">
+                            <dl class="grid min-w-0 grid-cols-1 gap-2 sm:grid-cols-[minmax(0,12rem)_minmax(0,1fr)] sm:gap-x-3 sm:gap-y-3 text-base md:text-xl">
                                 {section.items.map((item) => (
                                     <>
-                                        <dt class="text-sm font-medium text-body">
-                                            {item.label}
+                                        <dt class="min-w-0 max-w-[10rem] break-words font-bold text-black text-sm md:text-lg [overflow-wrap:anywhere]">
+                                            {`${item.label}:`}
                                         </dt>
-                                        <dd class="text-sm text-heading">
+                                        <dd class="min-w-0 whitespace-pre-line text-heading [overflow-wrap:anywhere]">
                                             {item.value.type === "link" ? (
                                                 <a
                                                     class="hyperlink inline-flex items-center gap-1"
