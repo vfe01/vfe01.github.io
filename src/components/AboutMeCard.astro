@@ -1,0 +1,144 @@
+---
+type AboutMeValue =
+    | { type: "text"; text: string }
+    | { type: "link"; text: string; href: string; external?: boolean };
+
+type AboutMeItem = {
+    label: string;
+    value: AboutMeValue;
+};
+
+const aboutMePersonalInformation: AboutMeItem[] = [
+    { label: "Name", value: { type: "text", text: "Ville Elings" } },
+    { label: "Age", value: { type: "text", text: "25 years" } },
+    { label: "Located in", value: { type: "text", text: "Uppsala, Sweden" } },
+];
+
+const aboutMeProficiencies: AboutMeItem[] = [
+    {
+        label: "Education",
+        value: {
+            type: "text",
+            text: "Master's Programme in Computer and Information Engineering, Uppsala University 2021-2026",
+        },
+    },
+    {
+        label: "Areas of Expertise",
+        value: {
+            type: "text",
+            text: "Machine Learning,\nData Engineering,\nFullstack Development",
+        }
+    },
+    {
+        label: "Previous Occupations",
+        value: {
+            type: "text",
+            text: "Fullstack Engineer,\nTeaching Assistant (IT engineering project course)",
+        },
+    },
+    
+];
+
+const aboutMeWebsiteLinks: AboutMeItem[] = [
+    {
+        label: "LinkedIn",
+        value: {
+            type: "link",
+            text: "View profile",
+            href: "https://www.linkedin.com/in/ville-elings-378a11249/",
+            external: true,
+        },
+    },
+    {
+        label: "GitHub",
+        value: {
+            type: "link",
+            text: "@vfe01",
+            href: "https://github.com/vfe01",
+            external: true,
+        },
+    }
+];
+
+const cardSections = [
+    {
+        title: "Personal Information",
+        items: aboutMePersonalInformation,
+    },
+    {
+        title: "Proficiencies",
+        items: aboutMeProficiencies,
+    },
+    {
+        title: "Website Links",
+        items: aboutMeWebsiteLinks,
+    },
+];
+---
+
+<section aria-label="About me overview" class="w-full my-10">
+    <article
+        class="relative overflow-hidden rounded-3xl border-4 border-gray-200 bg-linear-to-br from-stone-300 to-taupe-100 p-6 shadow-lg/90 shadow-neutral-tertiary/90 sm:p-8"
+    >
+        <div
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.25),transparent_55%)]"
+        >
+        </div>
+        <div class="relative z-10 space-y-6">
+            <div>
+                <h2 class="mt-1 text-3xl font-bold tracking-tight text-heading">
+                    About Me
+                </h2>
+            </div>
+
+            <div
+                class="flex flex-col divide-y divide-default rounded-2xl border border-default bg-neutral-primary/70 backdrop-blur-sm"
+            >
+                {
+                    cardSections.map((section) => (
+                        <section class="min-w-0 p-4 sm:p-5">
+                            <h3 class="mb-4 text-lg md:text-2xl font-semibold uppercase tracking-wide text-heading text-right mr-5">
+                                {section.title}
+                            </h3>
+
+                            <dl class="grid min-w-0 grid-cols-1 gap-2 sm:grid-cols-[minmax(0,12rem)_minmax(0,1fr)] sm:gap-x-3 sm:gap-y-3 text-base md:text-xl">
+                                {section.items.map((item) => (
+                                    <>
+                                        <dt class="min-w-0 max-w-[10rem] break-words font-bold text-black text-sm md:text-lg [overflow-wrap:anywhere]">
+                                            {`${item.label}:`}
+                                        </dt>
+                                        <dd class="min-w-0 whitespace-pre-line text-heading [overflow-wrap:anywhere]">
+                                            {item.value.type === "link" ? (
+                                                <a
+                                                    class="hyperlink inline-flex items-center gap-1"
+                                                    href={item.value.href}
+                                                    target={
+                                                        item.value.external
+                                                            ? "_blank"
+                                                            : undefined
+                                                    }
+                                                    rel={
+                                                        item.value.external
+                                                            ? "noopener noreferrer"
+                                                            : undefined
+                                                    }
+                                                >
+                                                    {item.value.text}
+                                                    <span aria-hidden="true">
+                                                        ↗
+                                                    </span>
+                                                </a>
+                                            ) : (
+                                                item.value.text
+                                            )}
+                                        </dd>
+                                    </>
+                                ))}
+                            </dl>
+                        </section>
+                    ))
+                }
+            </div>
+        </div>
+    </article>
+</section>

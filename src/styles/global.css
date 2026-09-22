@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
@@ -13,6 +14,16 @@
     }
 
     .maintitle {
-        @apply text-center text-4xl font-bold mb-4 tracking-tight text-heading md:text-5xl lg:text-7xl;
+        @apply text-center text-4xl font-bold py-2 md:py-6 tracking-tight;
+    }
+}
+
+@layer base {
+    body,
+    button,
+    input,
+    select,
+    textarea {
+        @apply font-[Roboto]
     }
 }
